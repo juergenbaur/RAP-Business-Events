@@ -1,0 +1,5 @@
+CLASS zbp_jui_online_shop DEFINITION PUBLIC ABSTRACT FINAL FOR BEHAVIOR OF zjui_online_shop.
+ENDCLASS.
+
+CLASS zbp_jui_online_shop IMPLEMENTATION.
+ENDCLASS.

@@ -1,0 +1,20 @@
+managed with additional save implementation in class zbp_jui_online_shop unique;
+strict ( 1 );
+
+define behavior for ZJUI_ONLINE_SHOP alias Online_Shop
+persistent table zju_onlineshop
+lock master
+authorization master ( instance )
+//etag master <field_name>
+{
+  field ( numbering : managed, readonly ) order_Uuid;
+  field ( mandatory ) Ordereditem;
+  field ( readonly ) Creationdate, order_id, deliverydate;
+  determination calculate_order_id on modify { create; }
+
+  create;
+  update;
+  delete;
+
+  event ItemIsOrdered parameter ZJUD_ItemOrdered;
+}
